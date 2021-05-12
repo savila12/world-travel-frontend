@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdventureService} from '../services/adventure/adventure.service';
+import { Router, ActivatedRoute, ParamMap} from '@angular/router';
+
 declare const M;
 
 @Component({
@@ -9,12 +11,13 @@ declare const M;
 })
 export class AdventuresComponent implements OnInit {
   public adventures: [];
+  public adventure: any;
   public adventureName: string;
   public dateWent: string;
   public adventureDescription: string;
   public countryName: string;
 
-  constructor(private adventureService: AdventureService) { }
+  constructor(private adventureService: AdventureService, private route: ActivatedRoute) { }
 
   getAdventures(): any {
     this.adventureService.getAdventures().subscribe((response: any) => {
@@ -46,24 +49,25 @@ export class AdventuresComponent implements OnInit {
     });
   }
 
-  updateAdventure(adventure): any {
-    // @ts-ignore
-    const index = this.adventures.indexOf(adventure);
-    const updateAdventure = {
-      adventureName: this.adventureName,
-      dateWent: this.dateWent,
-      adventureDescription: this.adventureDescription,
-      countryName: this.countryName
-    };
-    console.log(index);
-    this.adventureService.updateAdventure(adventure).subscribe(response => {
-      // @ts-ignore
-      // this.adventures[index][this.adventureName] = adventure.adventureName;
-      console.log(response);
-    });
-  }
+  // updateAdventure(adventure): any {
+  //   // @ts-ignore
+  //   const index = this.adventures.indexOf(adventure);
+  //   const updateAdventure = {
+  //     adventureName: this.adventureName,
+  //     dateWent: this.dateWent,
+  //     adventureDescription: this.adventureDescription,
+  //     countryName: this.countryName
+  //   };
+  //   console.log(index);
+  //   this.adventureService.updateAdventure(adventure).subscribe(response => {
+  //     // @ts-ignore
+  //     // this.adventures[index][this.adventureName] = adventure.adventureName;
+  //     console.log(response);
+  //   });
+  // }
 
   ngOnInit(): void {
+
     this.getAdventures();
     if (!localStorage.getItem('currentUser')){
       const toastHTML = '<span>You much login to see your Adventures</span>';

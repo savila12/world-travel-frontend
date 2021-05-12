@@ -1,0 +1,19 @@
+.adventures-container{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-evenly;
+}
+.adventureList{
+  font-size: 24px;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  border: solid black;
+}
+button{
+  margin: 5px;
+}

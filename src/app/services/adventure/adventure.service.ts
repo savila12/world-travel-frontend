@@ -67,8 +67,9 @@ export class AdventureService {
         Authorization: `Bearer ${token}`
       }),
     };
+    console.log(token, requestOptions, adventure);
     return this.http
-        .put(`${herokuUrl}/api/adventures/${adventure.id}`, requestOptions);
+        .put(`${herokuUrl}/api/adventures/${adventure.id}`, adventure, requestOptions);
   }
 
 }

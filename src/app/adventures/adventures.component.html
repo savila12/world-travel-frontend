@@ -1,22 +1,27 @@
-<div *ngIf="adventures">
-  <h4>All Adventures</h4>
-  <ul>
-    <li *ngFor="let adventure of adventures">
-      {{adventure.adventureName}} -- {{adventure.adventureDescription}} -- {{adventure.countryName}}
-      <button (click)="deleteAdventure(adventure)">delete</button>
-      <button routerLink="/update">update</button>
-    </li>
-  </ul>
+<div class="adventures-container">
+  <div class="adventureList-container" *ngIf="adventures">
+    <h4>All Adventures</h4>
+    <ul>
+      <li class="adventureList" *ngFor="let adventure of adventures">
+        {{adventure.adventureName}} -- {{adventure.adventureDescription}} -- {{adventure.countryName}}
+        <button class="waves-effect waves-light btn" (click)="deleteAdventure(adventure)">delete</button>
+        <button class="waves-effect waves-light btn" routerLink="/update/adventures/{{adventure.id}}">update</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="createAdventure-container">
+    <h4>Create a New Adventure</h4>
+    <form (submit)="createAdventure()">
+      <input [(ngModel)]="adventureName" name="adventureName" type="text" placeholder="name" />
+      <input [(ngModel)]="dateWent" name="dateWent" type="text" placeholder="date" />
+      <input [(ngModel)]="adventureDescription" name="adventureDescription" type="text" placeholder="description"/>
+      <input [(ngModel)]="countryName" name="countryName" type="text" placeholder="country"/>
+      <input class="waves-effect waves-light btn" type="submit"/>
+    </form>
+  </div>
 </div>
-<div class="createAdventure-container">
-  <form (submit)="createAdventure()">
-    <input [(ngModel)]="adventureName" name="adventureName" type="text" placeholder="name" />
-    <input [(ngModel)]="dateWent" name="dateWent" type="text" placeholder="date" />
-    <input [(ngModel)]="adventureDescription" name="adventureDescription" type="text" placeholder="description"/>
-    <input [(ngModel)]="countryName" name="countryName" type="text" placeholder="country"/>
-    <input class="waves-effect waves-light btn" type="submit"/>
-  </form>
-</div>
+
 
 
 

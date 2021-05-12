@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'api/adventures',
+    path: 'adventures',
     component: AdventuresComponent
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'api/countries',
+    path: 'countries',
     component: CountryComponent
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     component: AdventureComponent
   },
   {
-    path: 'update',
+    path: 'update/adventures/:id',
     component: UpdateComponent
   }
 ];
