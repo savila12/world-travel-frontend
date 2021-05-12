@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AdventureComponent } from './adventure/adventure.component';
 import { CountryComponent } from './country/country.component';
 import { AdventuresComponent } from './adventures/adventures.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AdventuresComponent } from './adventures/adventures.component';
     HomeComponent,
     AdventureComponent,
     CountryComponent,
-    AdventuresComponent
+    AdventuresComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

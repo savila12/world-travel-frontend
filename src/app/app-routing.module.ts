@@ -6,10 +6,12 @@ import {LoginComponent} from './login/login.component';
 import {CountryComponent} from './country/country.component';
 import {LogoutComponent} from './logout/logout.component';
 import {HomeComponent} from './home/home.component';
+import {AdventuresComponent} from './adventures/adventures.component';
+import {UpdateComponent} from './update/update.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
@@ -18,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'api/adventures',
-    component: AdventureComponent
+    component: AdventuresComponent
   },
   {
     path: 'login',
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent
+  },
+  {
+    path: 'adventures/:id',
+    component: AdventureComponent
+  },
+  {
+    path: 'update',
+    component: UpdateComponent
   }
 ];
 
